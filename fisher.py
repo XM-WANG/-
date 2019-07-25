@@ -4,10 +4,10 @@ import argparse
 import numpy as np
 
 
-def gen_line(init, target, amp=0.05, inter=1000):
-    x = np.linspace(0, 100, inter)
+def gen_line(init, target, amp=0.05, iter=1000):
+    x = np.linspace(0, 100, iter)
     k = (target - init) / 100
-    b = np.random.random(size=(inter)) * amp
+    b = np.random.random(size=(iter)) * amp
     y = k * x + init + b
     return x, y
 
@@ -42,22 +42,22 @@ count = 0
 recall_init_x, recall_init_y = gen_line(init=args.init_r,
                                         target=args.target_r,
                                         amp=args.amp_r,
-                                        inter=args.max_iter)
+                                        iter=args.max_iter)
 prec_init_x, prec_init_y = gen_line(init=args.init_p,
                                     target=args.target_p,
                                     amp=args.amp_p,
-                                    inter=args.max_iter)
+                                    iter=args.max_iter)
 loss_init_x, loss_init_y = gen_line(init=args.init_l,
                                     target=args.target_l,
                                     amp=args.amp_l,
-                                    inter=args.max_iter)
+                                    iter=args.max_iter)
 
 while (True):
 
     time.sleep(1)
     print("Epoch:{}\n".format(epc))
     time.sleep(2)
-    for inter in range(args.iters):
+    for iter in range(args.iters):
 
         if count < len(recall_init_y):
             recall = recall_init_y[count]
@@ -76,8 +76,8 @@ while (True):
 
         cost = random.random()
         print(
-            "Interation:{}  Recall:{},  Precision:{},  Loss:{},  Time:{:.2f}s".
-            format(inter, recall, prec, los, cost))
+            "iteration:{}  Recall:{},  Precision:{},  Loss:{},  Time:{:.2f}s".
+            format(iter, recall, prec, los, cost))
         count += 1
         time.sleep(1)
     time.sleep(1)
