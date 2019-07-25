@@ -39,35 +39,35 @@ python3 fisher.py
 
 1. 简介： 根据四个参数生成一些线性的离散点，我们假设一条线的表达式为：
 
- > y = k·x + init
+   > y = k·x + init
 
- 通过以上公式生成的（x，y）点应当全在一条线上，为了使他们有一些波动，我们引入一个噪声`bias`，和噪声的强度参数`amp`，公式变成如下形式：
+   通过以上公式生成的（x，y）点应当全在一条线上，为了使他们有一些波动，我们引入一个噪声`bias`，和噪声的强度参数`amp`，公式变成如下形式：
 
- > y = k·x + init + amp·bias
+   > y = k·x + init + amp·bias
 
- `bias` 是一个随机数，影响强度由参数`amp`控制
+   `bias` 是一个随机数，影响强度由参数`amp`控制
 
 2. 参数介绍与返回值：
 
- - init：float，第一个点的y值。
+   - init：float，第一个点的y值。
 
- - target：float，最后一个点的y值。
+   - target：float，最后一个点的y值。
 
- - amp：float，振幅，代表每个点距离线的距离，这个值越大生成的点就离线越远，取0时将没有偏差，所有点均位于线上。
+   - amp：float，振幅，代表每个点距离线的距离，这个值越大生成的点就离线越远，取0时将没有偏差，所有点均位于线上。
 
- - iter：int，生成的x点个数。
+   - iter：int，生成的x点个数。
 
- - 返回值：返回这条线上生成的所有x和所有y，x和y均为shape=(iter,)的numpy.array。
+   - 返回值：返回这条线上生成的所有x和所有y，x和y均为shape=(iter,)的numpy.array。
 
 3. 例子：
 
-  我们模拟cnn训练时候的precision生成，我们假设初始的precision是0.3，经过400次迭代，预期最终得到的precision是0.8，那我们可以如下设置参数：
+    我们模拟cnn训练时候的precision生成，我们假设初始的precision是0.3，经过400次迭代，预期最终得到的precision是0.8，那我们可以如下设置参数：
 
-  ```python
-  x, y = gen_line(init=0.3, target=0.8, amp=0.05, iter=400)
-  ```
+    ```python
+    x, y = gen_line(init=0.3, target=0.8, amp=0.05, iter=400)
+    ```
 
-  y就是我们最后得到的precision的值，可以用`matplotlib`将x，y画出来查看。
+    y就是我们最后得到的precision的值，可以用`matplotlib`将x，y画出来查看。
 
 ### 程序参数介绍：
 
