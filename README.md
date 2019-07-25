@@ -72,7 +72,7 @@ python3 fisher.py
 ### 程序参数介绍：
 
 ```
-python3 fisher.py -i=20 -mi=400 -ir=0.2 -tr=-0.5 -ar=0.05 -ip=0.3 -tp=0.7 -ap=0.05 -il=0.7 -tl=0.1 -al=0.05
+python3 fisher.py -i=20 -mi=400 -ir=0.2 -tr=0.5 -ar=0.05 -ip=0.3 -tp=0.7 -ap=0.05 -il=0.7 -tl=0.1 -al=0.05
 ```
 
 缩写一览：
