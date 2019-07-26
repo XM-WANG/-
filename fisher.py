@@ -62,17 +62,17 @@ while (True):
         if count < len(recall_init_y):
             recall = recall_init_y[count]
         else:
-            recall = args.target_r + random.random() * 0.05
+            recall = args.target_r + random.random() * args.amp_r
 
         if count < len(prec_init_y):
             prec = prec_init_y[count]
         else:
-            prec = args.target_p + random.random() * 0.05
+            prec = args.target_p + random.random() * args.amp_p
 
         if count < len(loss_init_y):
             los = loss_init_y[count]
         else:
-            los = args.target_l + random.random() * 0.05
+            los = args.target_l + random.random() * args.amp_l
 
         cost = random.random()
         print(
