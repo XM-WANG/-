@@ -79,7 +79,7 @@ python3 fisher.py -i=20 -mi=400 -ir=0.2 -tr=0.5 -ar=0.05 -ip=0.3 -tp=0.7 -ap=0.0
 
  - i：iters，模拟每个epoch里有多少个iter
 
- - mx：max_iter，迭代多少次达到预期的target值
+ - mi：max_iter，迭代多少次达到预期的target值
 
  - r：recall
 
