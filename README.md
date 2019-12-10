@@ -31,7 +31,7 @@
 感觉写到这readme已经要比代码多了...
 
 ```
-python3 fisher.py
+python -u fisher.py 2>&1|tee -a 1.log
 ```
 ## 进阶
 
